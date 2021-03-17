@@ -1,0 +1,51 @@
+.example-card {
+  background-color: #7FB6D4;
+}
+
+.header-image-design {
+  background-image: url('/assets/image/services/web-design-logo.png');
+  background-size: cover;
+  height: 5em;
+  width: 5em;
+}
+.header-image-cms{
+  background-image: url('/assets/image/services/logo_cms.png');
+  background-size: cover;
+  height: 5em;
+  width: 5em;
+}
+.header-image-framework{
+  background-image: url('/assets/image/services/symfony.svg');
+  background-size: cover;
+  height: 5em;
+  width: 5em;
+}
+.header-image-referencement{
+  background-image: url('/assets/image/services/icone-SEO.png');
+  background-size: cover;
+  height: 5em;
+  width: 5em;
+}
+.header-image-maintenance{
+  background-image: url('/assets/image/services/logo-maintenance.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 5em;
+  width: 5em;
+}
+.header-image-agile{
+  background-image: url('/assets/image/services/mettod-agile.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 5em;
+  width: 5em;
+}
+mat-card-header mat-card-title{
+  font-size: 2em ;
+  line-height: 1em;
+}
+mat-card-content p{
+  font-size: 1.3em;
+  line-height: 1.3em;
+}

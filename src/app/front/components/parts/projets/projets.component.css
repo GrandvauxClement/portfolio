@@ -1,0 +1,27 @@
+.imageSelected{
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url('/assets/image/projet/monPortfolio.png') no-repeat center;
+  background-size: cover;
+  height: 100%;
+}
+.projetLargeCol{
+  height: 40vh;
+}
+.text-monBlue{
+  color: #7FB6D4;
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+.titreProjet{
+  color: #7FB6D4;
+  font-size: 2em ;
+  line-height: 1em;
+}
+.projetThinCol{
+  height: 40vh;
+}
+.contenuProjetThinCol{
+  height: 45%;
+}
+.cursorCustom{
+  cursor: pointer;
+}

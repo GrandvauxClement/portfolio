@@ -1,0 +1,31 @@
+.bg-bleu{
+  background-color: #7FB6D4;
+}
+.bg-bleuFoncer{
+  background-color: #01233f;
+}
+.bg-bleu ul {
+  list-style-type: none;
+  padding: 0;
+}
+.bg-bleuFoncer li{
+  list-style: none;
+}
+.bg-bleuFoncer li::before{
+  content: "\00BB";
+  color: white;
+}
+img {
+  height: 4em;
+}
+h3{
+  font-size: 2em ;
+  color: white;
+}
+.contact {
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+.contact mat-icon{
+  font-size: 2rem;
+}

@@ -1,0 +1,55 @@
+
+<div class="row" >
+  <div *ngFor="let project of projet; let index = index;" >
+    <div class="d-flex mt-3" *ngIf="index === 0 || index===6" >
+      <div (mouseover)="cardSelect[index] = true" (mouseout)="cardSelect[index] = false" class="col-8 projetLargeCol cursorCustom" (click)="openDialog(index)">
+        <img *ngIf="!cardSelect[index]" src="../assets/image/projet/monPortfolio.png" class="h-100 img-fluid border border-dark rounded">
+        <div *ngIf="cardSelect[index]" class="h-100 imageSelected d-flex flex-column justify-content-around border border-dark rounded">
+          <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
+          <p class="mt-5 text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{project}} </p>
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-column justify-content-between projetThinCol ">
+        <div (mouseover)="cardSelect[index+1] = true" (mouseout)="cardSelect[index+1] = false" class=" contenuProjetThinCol cursorCustom" (click)="openDialog(index+1)">
+          <img *ngIf="!cardSelect[index+1]" src="../assets/image/projet/monPortfolio.png" class="img-fluid border border-dark rounded">
+          <div *ngIf="cardSelect[index+1]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded">
+            <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
+            <p class="text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{projet[index+1]}} </p>
+          </div>
+        </div>
+        <div (mouseover)="cardSelect[index+2] = true" (mouseout)="cardSelect[index+2] = false " class="contenuProjetThinCol cursorCustom" (click)="openDialog(index+2)">
+          <img *ngIf="!cardSelect[index+2]" src="../assets/image/projet/monPortfolio.png" class="img-fluid border border-dark rounded ">
+          <div *ngIf="cardSelect[index+2]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded ">
+            <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
+            <p class="mt-5 text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{projet[index+2]}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex mt-3" *ngIf="index === 3 " >
+      <div (mouseover)="cardSelect[index] = true" (mouseout)="cardSelect[index] = false" class="col-8 projetLargeCol order-2 cursorCustom" >
+        <img *ngIf="!cardSelect[index]" src="../assets/image/projet/monPortfolio.png" class="h-100 img-fluid border border-dark rounded">
+        <div *ngIf="cardSelect[index]" class="h-100 imageSelected d-flex flex-column justify-content-around border border-dark rounded">
+          <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
+          <p class="mt-5 text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{project}} </p>
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-column justify-content-between projetThinCol order-1">
+        <div (mouseover)="cardSelect[index+1] = true" (mouseout)="cardSelect[index+1] = false" class=" contenuProjetThinCol cursorCustom">
+          <img *ngIf="!cardSelect[index+1]" src="../assets/image/projet/monPortfolio.png" class="img-fluid border border-dark rounded">
+          <div *ngIf="cardSelect[index+1]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded">
+            <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
+            <p class="text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{projet[index+1]}} </p>
+          </div>
+        </div>
+        <div (mouseover)="cardSelect[index+2] = true" (mouseout)="cardSelect[index+2] = false " class="contenuProjetThinCol cursorCustom">
+          <img *ngIf="!cardSelect[index+2]" src="../assets/image/projet/monPortfolio.png" class="img-fluid border border-dark rounded ">
+          <div *ngIf="cardSelect[index+2]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded ">
+            <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
+            <p class="mt-5 text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{projet[index+2]}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
