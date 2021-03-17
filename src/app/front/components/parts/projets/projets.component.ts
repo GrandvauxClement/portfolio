@@ -14,6 +14,7 @@ export interface DialogData {
 })
 export class ProjetsComponent implements OnInit {
   isLoading: boolean;
+  urlImage = 'http://localhost:8000/image/projet/';
   projets: Projet[];
  cardSelect = [];
  projet = ['test', 'deuxieme', 'troisieme', 'Oden', 'Luffy', 'Zoro', 'Dernier'];
@@ -34,7 +35,8 @@ export class ProjetsComponent implements OnInit {
   openDialog(id){
     console.log( this.projets[id]);
     const dialogRef = this.dialog.open(DialogProjetOpen, {
-      data: {projet: this.projets[id]}
+      width: '95vh',
+      data: {projet: this.projets[id]},
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('Dialog result : ${result}');

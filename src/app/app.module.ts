@@ -14,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {DialogProjetOpen, ProjetsComponent} from './front/components/parts/projets/projets.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {HttpClientModule} from '@angular/common/http';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 @NgModule({
@@ -35,8 +36,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatIconModule,
     FontAwesomeModule,
     MatDialogModule,
-    HttpClientModule
-
+    HttpClientModule,
+    MDBBootstrapModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

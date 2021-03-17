@@ -3,15 +3,17 @@
   <div *ngFor="let project of projet; let index = index;" >
     <div class="d-flex mt-3" *ngIf="index === 0 || index===6" >
       <div (mouseover)="cardSelect[index] = true" (mouseout)="cardSelect[index] = false" class="col-8 projetLargeCol cursorCustom" (click)="openDialog(index)">
-        <img *ngIf="!cardSelect[index]" src="../assets/image/projet/monPortfolio.png" class="h-100 img-fluid border border-dark rounded">
-        <div *ngIf="cardSelect[index]" class="h-100 imageSelected d-flex flex-column justify-content-around border border-dark rounded">
-          <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
-          <p class="mt-5 text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{project}} </p>
+        <img *ngIf="!cardSelect[index]" src="{{urlImage + projets[0].images[0]}}" class="h-100 img-fluid border border-dark rounded">
+        <div *ngIf="cardSelect[index]" class=" h-100 d-flex align-items-center justify-content-center border border-dark rounded"
+             [ngStyle]="{'background':'linear-gradient(90deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url(' + urlImage + projets[0].images[0] + ') no-repeat center',
+                         'background-size':'cover',
+                         'height': '100%'}">
+          <h2 class="titreProjet">Application Marlier sa </h2>
         </div>
       </div>
       <div class="col-4 d-flex flex-column justify-content-between projetThinCol ">
         <div (mouseover)="cardSelect[index+1] = true" (mouseout)="cardSelect[index+1] = false" class=" contenuProjetThinCol cursorCustom" (click)="openDialog(index+1)">
-          <img *ngIf="!cardSelect[index+1]" src="../assets/image/projet/monPortfolio.png" class="img-fluid border border-dark rounded">
+          <img *ngIf="!cardSelect[index+1]" src="{{urlImage + projets[0].images[0]}}" class="img-fluid border border-dark rounded">
           <div *ngIf="cardSelect[index+1]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded">
             <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
             <p class="text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{projet[index+1]}} </p>
