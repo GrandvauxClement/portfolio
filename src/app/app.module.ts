@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {DialogProjetOpen, ProjetsComponent} from './front/components/parts/projets/projets.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     FontAwesomeModule,
     MatDialogModule,
+    HttpClientModule
 
   ],
   providers: [],

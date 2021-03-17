@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {Projet} from '../../../../models/projet';
+import {ProjetService} from '../../../../services/projet.service';
 
 export interface DialogData {
   projet: string;
@@ -11,18 +13,28 @@ export interface DialogData {
   styleUrls: ['./projets.component.css']
 })
 export class ProjetsComponent implements OnInit {
+  isLoading: boolean;
+  projets: Projet[];
  cardSelect = [];
  projet = ['test', 'deuxieme', 'troisieme', 'Oden', 'Luffy', 'Zoro', 'Dernier'];
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private projetService: ProjetService) { }
 
-  ngOnInit(): void {
+  // tslint:disable-next-line:typedef
+  ngOnInit() {
+    this.isLoading = true;
     for (let i = 0; i < this.projet.length; i++) {
       this.cardSelect[i] = false;
     }
+    return this.projetService.getProjets().subscribe((data) => {
+      this.projets = data['hydra:member'];
+      this.isLoading = false;
+      console.log(this.projets);
+    });
   }
   openDialog(id){
+    console.log( this.projets[id]);
     const dialogRef = this.dialog.open(DialogProjetOpen, {
-      data: {projet: this.projet[id]}
+      data: {projet: this.projets[id]}
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('Dialog result : ${result}');
