@@ -1,57 +1,90 @@
-
-<div class="row" >
-  <div *ngFor="let project of projet; let index = index;" >
-    <div class="d-flex mt-3" *ngIf="index === 0 || index===6" >
-      <div (mouseover)="cardSelect[index] = true" (mouseout)="cardSelect[index] = false" class="col-8 projetLargeCol cursorCustom" (click)="openDialog(index)">
-        <img *ngIf="!cardSelect[index]" src="{{urlImage + projets[0].images[0]}}" class="h-100 img-fluid border border-dark rounded">
+<div class="d-xl-block d-none " >
+  <div *ngFor="let project of projets; let index = index;" >
+    <div class="mt-3 row " *ngIf="index === 0 || index===6" style="height: 45vh" >
+          <!--  ***********    Vue Bureau ******************-->
+      <div (mouseover)="cardSelect[index] = true" (mouseout)="cardSelect[index] = false" class="col-8  projetLargeCol cursorCustom" (click)="openDialog(index)">
+        <img *ngIf="!cardSelect[index]" src="{{urlImage + project.images[0]}}" class="h-100 img-fluid border border-dark rounded">
         <div *ngIf="cardSelect[index]" class=" h-100 d-flex align-items-center justify-content-center border border-dark rounded"
-             [ngStyle]="{'background':'linear-gradient(90deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url(' + urlImage + projets[0].images[0] + ') no-repeat center',
+             [ngStyle]="{'background':'linear-gradient(90deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url(' + urlImage + project.images[0] + ') no-repeat center',
                          'background-size':'cover',
                          'height': '100%'}">
-          <h2 class="titreProjet">Application Marlier sa </h2>
+          <h2 class="titreProjet">{{project.titre}} </h2>
         </div>
       </div>
-      <div class="col-4 d-flex flex-column justify-content-between projetThinCol ">
+      <div class="col-4 d-flex  flex-column justify-content-around projetThinCol ">
         <div (mouseover)="cardSelect[index+1] = true" (mouseout)="cardSelect[index+1] = false" class=" contenuProjetThinCol cursorCustom" (click)="openDialog(index+1)">
-          <img *ngIf="!cardSelect[index+1]" src="{{urlImage + projets[0].images[0]}}" class="img-fluid border border-dark rounded">
-          <div *ngIf="cardSelect[index+1]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded">
-            <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
-            <p class="text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{projet[index+1]}} </p>
+          <img *ngIf="!cardSelect[index+1]" src="{{urlImage + projets[index+1].images[0]}}" class="img-fluid border border-dark rounded">
+          <div *ngIf="cardSelect[index+1]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded"
+               [ngStyle]="{'background':'linear-gradient(90deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url(' + urlImage + projets[index+1].images[0] + ') no-repeat center',
+                         'background-size':'cover',
+                         'height': '100%'}">
+            <h2 class="text-center titreProjet"> {{projets[index+1].titre}} </h2>
           </div>
         </div>
         <div (mouseover)="cardSelect[index+2] = true" (mouseout)="cardSelect[index+2] = false " class="contenuProjetThinCol cursorCustom" (click)="openDialog(index+2)">
-          <img *ngIf="!cardSelect[index+2]" src="../assets/image/projet/monPortfolio.png" class="img-fluid border border-dark rounded ">
-          <div *ngIf="cardSelect[index+2]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded ">
-            <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
-            <p class="mt-5 text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{projet[index+2]}} </p>
+          <img *ngIf="!cardSelect[index+2]" src="{{urlImage + projets[index+2].images[0]}}" class="img-fluid border border-dark rounded ">
+          <div *ngIf="cardSelect[index+2]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded"
+               [ngStyle]="{'background':'linear-gradient(90deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url(' + urlImage + projets[index+2].images[0] + ') no-repeat center',
+                         'background-size':'cover',
+                         'height': '100%'}">
+            <h2 class=" text-center titreProjet">{{projets[index+2].titre}} </h2>
           </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class=" row mt-3" *ngIf="index === 3" >
+
+      <div class="col-4 d-flex flex-column justify-content-between projetThinCol order">
+        <div (mouseover)="cardSelect[index+1] = true" (mouseout)="cardSelect[index+1] = false" class=" contenuProjetThinCol cursorCustom" (click)="openDialog(index+1)">
+          <img *ngIf="!cardSelect[index+1]" src="{{urlImage + projets[index+1].images[0]}}" class="img-fluid border border-dark rounded">
+          <div *ngIf="cardSelect[index+1]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded"
+               [ngStyle]="{'background':'linear-gradient(90deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url(' + urlImage + projets[index+1].images[0] + ') no-repeat center',
+                         'background-size':'cover',
+                         'height': '100%'}">
+            <h2 class="text-center titreProjet"> {{projets[index+1].titre}} </h2>
+          </div>
+        </div>
+        <div *ngIf="projets[index+2]" (mouseover)="cardSelect[index+2] = true" (mouseout)="cardSelect[index+2] = false " class="contenuProjetThinCol cursorCustom" (click)="openDialog(index+2)">
+          <img *ngIf="!cardSelect[index+2]" src="{{urlImage + projets[index+2].images[0]}}" class="img-fluid border border-dark rounded ">
+          <div *ngIf="cardSelect[index+2]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded"
+               [ngStyle]="{'background':'linear-gradient(90deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url(' + urlImage + projets[index+2].images[0] + ') no-repeat center',
+                         'background-size':'cover',
+                         'height': '100%'}">
+            <h2 class=" text-center titreProjet">{{projets[index+2].titre}} </h2>
+          </div>
+        </div>
+      </div>
+      <div (mouseover)="cardSelect[index] = true" (mouseout)="cardSelect[index] = false" class="col-8 projetLargeCol cursorCustom " (click)="openDialog(index)">
+        <img *ngIf="!cardSelect[index]" src="{{urlImage + projets[index].images[0]}}" class="h-100 img-fluid border border-dark rounded">
+        <div *ngIf="cardSelect[index]" class=" h-100 d-flex align-items-center justify-content-center border border-dark rounded"
+             [ngStyle]="{'background':'linear-gradient(90deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url(' + urlImage + project.images[0] + ') no-repeat center',
+                         'background-size':'cover',
+                         'height': '100%'}">
+          <h2 class="titreProjet">{{project.titre}} </h2>
         </div>
       </div>
     </div>
-    <div class="d-flex mt-3" *ngIf="index === 3 " >
-      <div (mouseover)="cardSelect[index] = true" (mouseout)="cardSelect[index] = false" class="col-8 projetLargeCol order-2 cursorCustom" >
-        <img *ngIf="!cardSelect[index]" src="../assets/image/projet/monPortfolio.png" class="h-100 img-fluid border border-dark rounded">
-        <div *ngIf="cardSelect[index]" class="h-100 imageSelected d-flex flex-column justify-content-around border border-dark rounded">
-          <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
-          <p class="mt-5 text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{project}} </p>
-        </div>
-      </div>
-      <div class="col-4 d-flex flex-column justify-content-between projetThinCol order-1">
-        <div (mouseover)="cardSelect[index+1] = true" (mouseout)="cardSelect[index+1] = false" class=" contenuProjetThinCol cursorCustom">
-          <img *ngIf="!cardSelect[index+1]" src="../assets/image/projet/monPortfolio.png" class="img-fluid border border-dark rounded">
-          <div *ngIf="cardSelect[index+1]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded">
-            <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
-            <p class="text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{projet[index+1]}} </p>
-          </div>
-        </div>
-        <div (mouseover)="cardSelect[index+2] = true" (mouseout)="cardSelect[index+2] = false " class="contenuProjetThinCol cursorCustom">
-          <img *ngIf="!cardSelect[index+2]" src="../assets/image/projet/monPortfolio.png" class="img-fluid border border-dark rounded ">
-          <div *ngIf="cardSelect[index+2]" class=" imageSelected d-flex flex-column justify-content-around border border-dark rounded ">
-            <h2 class=" text-center titreProjet">Grandvaux Clément <br> Freelance </h2>
-            <p class="mt-5 text-center text-white text-monBlue"> Portfolio réalisé pour mon compte {{projet[index+2]}} </p>
-          </div>
-        </div>
-      </div>
+    <!--  ***********    Vue Bureau fin ******************-->
+
+
+    <!--  ***********    Vue Smartphone ******************-->
+
+  </div>
+</div>
+  <!--  ***********    Vue Tablette ******************-->
+<div class="row d-block d-xl-none">
+  <div *ngFor="let project of projets; let index = index;"  (mouseover)="cardSelect[index] = true" (mouseout)="cardSelect[index] = false" class="col-xl-6 col-md-12 mb-2 projetLargeColTablette cursorCustom" (click)="openDialog(index)">
+    <img *ngIf="!cardSelect[index]" src="{{urlImage + project.images[0]}}" class="h-100 img-fluid border border-dark rounded" [ngStyle]="{'width':'100%'}">
+    <div *ngIf="cardSelect[index]" class=" h-100 d-flex align-items-center justify-content-center border border-dark rounded"
+         [ngStyle]="{'background':'linear-gradient(90deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url(' + urlImage + project.images[0] + ') no-repeat center',
+                         'background-size':'cover',
+                         'width':'100%'
+                         }">
+      <h2 class="titreProjet">{{project.titre}} {{index}}</h2>
     </div>
   </div>
 </div>
+  <!--  ***********   FIN Vue Tablette ******************-->
+

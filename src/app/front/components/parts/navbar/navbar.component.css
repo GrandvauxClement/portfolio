@@ -1,10 +1,31 @@
-
 .wave-container {
   background: linear-gradient(180deg, rgb(127, 182, 212), rgba(127, 182, 212, 0.75)), url('/assets/image/header.jpg') no-repeat center center / cover  ;
 
 }
-.header-contenu{
-  height: 50vh;
+
+@media screen and (min-width:1001px )
+{
+  .header-contenu{
+    height: 50vh;
+  }
+  #maNavBar{
+    height: 17vh;
+  }
+  /*Ordi */
+}
+@media screen and (max-width:1000px )
+{
+  .header-contenu{
+    height: 70vh;
+  }
+  #maNavBar{
+    height: 20vh;
+  }
+  #navbarSupportedContent{
+    background-color: #7FB6D4;
+    box-shadow: 100px 100px 100px 900px rgba(0, 0, 0, 0.32);
+  }
+  /*Tablette / Smartphone */
 }
 .header-contenu .row {
   height: 100%;
@@ -65,3 +86,6 @@
 nav .nav-item .nav-link {
   font-size: 1.6em;
 }
+
+
+

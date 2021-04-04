@@ -9,7 +9,7 @@ import {retry, catchError} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProjetService {
-  apiURL = 'http://127.0.0.1:8000/api/';
+  apiURL = 'http://127.0.0.1:8000';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -28,14 +28,22 @@ export class ProjetService {
     return throwError(errorMessage);
   }
   getProjets(): Observable<any> {
-    return this.http.get<Projet[]>(this.apiURL + 'projets');
+    return this.http.get<Projet[]>(this.apiURL + '/api/projets');
   }
 
   getProjetById(idProjet: number): Observable<Projet> {
-    return this.http.get<Projet>(this.apiURL + 'projets/' + idProjet)
+    return this.http.get<Projet>(this.apiURL + 'api/projets/' + idProjet)
       .pipe(
         retry(1),
         catchError(this.handleError)
       );
   }
+
+  getOneProjet(apiUrlRecu?): Observable<any> {
+      return this.http.get<Projet>(this.apiURL + apiUrlRecu)
+        .pipe(
+          retry(1),
+          catchError(this.handleError)
+        );
+    }
 }

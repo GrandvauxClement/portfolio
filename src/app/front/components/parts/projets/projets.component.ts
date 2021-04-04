@@ -2,9 +2,11 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {Projet} from '../../../../models/projet';
 import {ProjetService} from '../../../../services/projet.service';
+import {Router} from '@angular/router';
 
 export interface DialogData {
   projet: string;
+  paginator: [];
 }
 
 @Component({
@@ -33,7 +35,6 @@ export class ProjetsComponent implements OnInit {
     });
   }
   openDialog(id){
-    console.log( this.projets[id]);
     const dialogRef = this.dialog.open(DialogProjetOpen, {
       width: '95vh',
       data: {projet: this.projets[id]},
@@ -49,14 +50,14 @@ export class ProjetsComponent implements OnInit {
   templateUrl: 'dialog-projet-open.html',
 })
 export class DialogProjetOpen{
-
+  isLoading: boolean;
   constructor(
     public dialogRef: MatDialogRef<DialogProjetOpen>,
+    private projetService: ProjetService, private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: DialogData)
   {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 }

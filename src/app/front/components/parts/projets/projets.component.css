@@ -5,6 +5,22 @@
 }
 .projetLargeCol{
   height: 40vh;
+  width: 100%;
+}
+@media screen and (min-width:770px ) and (max-width: 1199px)
+{
+  .projetLargeColTablette{
+    height: 50vh;
+  }
+}
+@media screen and (max-width:769px )
+{
+  .projetLargeColTablette{
+    height: 35vh;
+  }
+}
+.projetPhone{
+  height: 30vh;
 }
 .text-monBlue{
   color: #7FB6D4;
@@ -14,7 +30,7 @@
 .titreProjet{
   color: #7FB6D4;
   font-size: 2em ;
-  line-height: 1em;
+  line-height: 1.5em;
 }
 .projetThinCol{
   height: 40vh;

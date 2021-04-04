@@ -1,10 +1,10 @@
 
 <h2 mat-dialog-title class="text-center" style=" color: #7FB6D4; font-size:3em;">{{data.projet['titre']}}</h2>
 <div class="row justify-content-center">
-  <div  style="width: 80%">
+  <div style="width: 90%">
     <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
       <ng-container *ngFor="let image of data.projet['images']; let index = index;">
-        <mdb-carousel-item style="height: 25em">
+        <mdb-carousel-item >
           <div class="view w-100">
             <img class="d-block w-100 " src="http://localhost:8000/image/projet/{{image}}" alt="{{index}} slide" >
             <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
@@ -15,14 +15,14 @@
   </div>
 </div>
 <div class="row justify-content-around mt-3">
-  <div class="col-6">
+  <div class="col-12 col-lg-6">
     <div style="border-bottom: #7FB6D4 3px solid;" >
       <h3 style=" color: #7FB6D4; font-size:2em;" class="mb-1"> DESCRIPTION</h3>
     </div>
     <p style=" font-size: 1.2em; " class="mt-2">{{data.projet['description']}}</p>
 
   </div>
-  <div class="col-5">
+  <div class="col-12 col-lg-5">
     <div style="border-bottom: #7FB6D4 3px solid;">
       <h3 style=" color: #7FB6D4; font-size:2em;" class="mb-1"> INFOS</h3>
     </div>
@@ -35,7 +35,7 @@
   </div>
 </div>
 <div mat-dialog-actions>
-  <button mat-button>Précedent</button>
+  <button mat-button >Précedent</button>
   <button mat-button >Suivant</button>
   <button mat-button mat-dialog-close>Fermer</button>
 </div>
