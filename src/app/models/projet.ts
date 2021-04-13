@@ -1,4 +1,5 @@
 export class Projet {
+  id: number;
   titre: string;
   annee: Date;
   technologie: Array<string>;

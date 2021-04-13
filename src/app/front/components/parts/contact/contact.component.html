@@ -1,0 +1,22 @@
+<form #contactForm="ngForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+  <mat-form-field appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput [(ngModel)]="contact.name" #name="ngModel" name="name" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="contact.email" #email="ngModel" name="email" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Type</mat-label>
+    <mat-select [(ngModel)]="contact.devis" #devis="ngModel" name="devis" required>
+      <mat-option [value]="false">Message</mat-option>
+      <mat-option [value]="true">Demander un devis</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Votre Message</mat-label>
+    <textarea matInput [(ngModel)]="contact.message" #message="ngModel" name="message" required></textarea>
+  </mat-form-field>
+  <button mat-raised-button class="mt-lg-4 embed-responsive-4by30 mx-5 mr-lg-0 mr-lg-4" type="submit">Envoyer le message</button>
+</form>
