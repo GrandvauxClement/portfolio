@@ -21,7 +21,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {ToastrModule} from 'ngx-toastr';
 import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -35,24 +35,25 @@ import {FormsModule} from '@angular/forms';
     DialogProjetOpen,
     ContactComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatIconModule,
-    FontAwesomeModule,
-    MatDialogModule,
-    HttpClientModule,
-    FormsModule,
-    MDBBootstrapModule.forRoot(),
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    CommonModule,
-    ToastrModule.forRoot(),
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatCardModule,
+        MatIconModule,
+        FontAwesomeModule,
+        MatDialogModule,
+        HttpClientModule,
+        FormsModule,
+        MDBBootstrapModule.forRoot(),
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+        CommonModule,
+        ToastrModule.forRoot(),
+        ReactiveFormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

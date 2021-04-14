@@ -1,11 +1,13 @@
-<form #contactForm="ngForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+<form id="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
   <mat-form-field appearance="fill">
-    <mat-label>Nom</mat-label>
-    <input matInput [(ngModel)]="contact.name" #name="ngModel" name="name" required>
+    <mat-label>Votre Nom</mat-label>
+    <input matInput type="text" [(ngModel)]="contact.name" #name="ngModel" name="name" required>
+
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input matInput [(ngModel)]="contact.email" #email="ngModel" name="email" required>
+    <mat-label>Votre Email</mat-label>
+    <input matInput [formControl]="email" required>
+    <mat-error *ngIf="email.invalid"> {{getErrorMessage()}}</mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Type</mat-label>
